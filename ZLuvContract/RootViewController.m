@@ -58,7 +58,7 @@
 #pragma mark Custom Methods
 - (void) singleTapGestureCaptured: (UITapGestureRecognizer *) recognizer {
     NSLog(@"tapped %d", [[recognizer view] tag]);
-    FrameViewController *aController = [[FrameViewController alloc] initWithTemplate: [framesArray objectAtIndex:recognizer.view.tag]];
+    FrameViewController *aController = [[FrameViewController alloc] initWithTemplate: [framesArray objectAtIndex:recognizer.view.tag] tag:recognizer.view.tag];
     [self.navigationController pushViewController:aController animated:YES];
     [aController release];
 }
