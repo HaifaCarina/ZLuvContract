@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "FrameViewController.h"
 
 @interface RootViewController : UIViewController {
     UIScrollView *framesScrollView;
+    NSMutableArray *framesArray;
 }
 
 @end
