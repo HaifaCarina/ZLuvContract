@@ -1,0 +1,295 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A5E0847B15382EFA00007A69 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0847A15382EFA00007A69 /* UIKit.framework */; };
+		A5E0847D15382EFA00007A69 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0847C15382EFA00007A69 /* Foundation.framework */; };
+		A5E0847F15382EFA00007A69 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0847E15382EFA00007A69 /* CoreGraphics.framework */; };
+		A5E0848115382EFA00007A69 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E0848015382EFA00007A69 /* CoreData.framework */; };
+		A5E0848715382EFA00007A69 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A5E0848515382EFA00007A69 /* InfoPlist.strings */; };
+		A5E0848A15382EFA00007A69 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0848915382EFA00007A69 /* main.m */; };
+		A5E0848D15382EFA00007A69 /* ZLuvContractAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0848C15382EFA00007A69 /* ZLuvContractAppDelegate.m */; };
+		A5E0849015382EFA00007A69 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5E0848E15382EFA00007A69 /* MainWindow.xib */; };
+		A5E0849315382EFA00007A69 /* ZLuvContract.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5E0849115382EFA00007A69 /* ZLuvContract.xcdatamodeld */; };
+		A5E0849B15382F1C00007A69 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E0849A15382F1C00007A69 /* RootViewController.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		A5E0847615382EFA00007A69 /* ZLuvContract.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLuvContract.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A5E0847A15382EFA00007A69 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		A5E0847C15382EFA00007A69 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A5E0847E15382EFA00007A69 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A5E0848015382EFA00007A69 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		A5E0848415382EFA00007A69 /* ZLuvContract-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "ZLuvContract-Info.plist"; sourceTree = "<group>"; };
+		A5E0848615382EFA00007A69 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		A5E0848815382EFA00007A69 /* ZLuvContract-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZLuvContract-Prefix.pch"; sourceTree = "<group>"; };
+		A5E0848915382EFA00007A69 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A5E0848B15382EFA00007A69 /* ZLuvContractAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLuvContractAppDelegate.h; sourceTree = "<group>"; };
+		A5E0848C15382EFA00007A69 /* ZLuvContractAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLuvContractAppDelegate.m; sourceTree = "<group>"; };
+		A5E0848F15382EFA00007A69 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainWindow.xib; sourceTree = "<group>"; };
+		A5E0849215382EFA00007A69 /* ZLuvContract.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ZLuvContract.xcdatamodel; sourceTree = "<group>"; };
+		A5E0849915382F1C00007A69 /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		A5E0849A15382F1C00007A69 /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A5E0847315382EFA00007A69 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5E0847B15382EFA00007A69 /* UIKit.framework in Frameworks */,
+				A5E0847D15382EFA00007A69 /* Foundation.framework in Frameworks */,
+				A5E0847F15382EFA00007A69 /* CoreGraphics.framework in Frameworks */,
+				A5E0848115382EFA00007A69 /* CoreData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A5E0846B15382EFA00007A69 = {
+			isa = PBXGroup;
+			children = (
+				A5E0848215382EFA00007A69 /* ZLuvContract */,
+				A5E0847915382EFA00007A69 /* Frameworks */,
+				A5E0847715382EFA00007A69 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A5E0847715382EFA00007A69 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0847615382EFA00007A69 /* ZLuvContract.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A5E0847915382EFA00007A69 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0847A15382EFA00007A69 /* UIKit.framework */,
+				A5E0847C15382EFA00007A69 /* Foundation.framework */,
+				A5E0847E15382EFA00007A69 /* CoreGraphics.framework */,
+				A5E0848015382EFA00007A69 /* CoreData.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A5E0848215382EFA00007A69 /* ZLuvContract */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0848B15382EFA00007A69 /* ZLuvContractAppDelegate.h */,
+				A5E0848C15382EFA00007A69 /* ZLuvContractAppDelegate.m */,
+				A5E0848E15382EFA00007A69 /* MainWindow.xib */,
+				A5E0849115382EFA00007A69 /* ZLuvContract.xcdatamodeld */,
+				A5E0848315382EFA00007A69 /* Supporting Files */,
+				A5E0849915382F1C00007A69 /* RootViewController.h */,
+				A5E0849A15382F1C00007A69 /* RootViewController.m */,
+			);
+			path = ZLuvContract;
+			sourceTree = "<group>";
+		};
+		A5E0848315382EFA00007A69 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0848415382EFA00007A69 /* ZLuvContract-Info.plist */,
+				A5E0848515382EFA00007A69 /* InfoPlist.strings */,
+				A5E0848815382EFA00007A69 /* ZLuvContract-Prefix.pch */,
+				A5E0848915382EFA00007A69 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A5E0847515382EFA00007A69 /* ZLuvContract */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A5E0849615382EFA00007A69 /* Build configuration list for PBXNativeTarget "ZLuvContract" */;
+			buildPhases = (
+				A5E0847215382EFA00007A69 /* Sources */,
+				A5E0847315382EFA00007A69 /* Frameworks */,
+				A5E0847415382EFA00007A69 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ZLuvContract;
+			productName = ZLuvContract;
+			productReference = A5E0847615382EFA00007A69 /* ZLuvContract.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A5E0846D15382EFA00007A69 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "NMG Resources, Inc.";
+			};
+			buildConfigurationList = A5E0847015382EFA00007A69 /* Build configuration list for PBXProject "ZLuvContract" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = A5E0846B15382EFA00007A69;
+			productRefGroup = A5E0847715382EFA00007A69 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A5E0847515382EFA00007A69 /* ZLuvContract */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A5E0847415382EFA00007A69 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5E0848715382EFA00007A69 /* InfoPlist.strings in Resources */,
+				A5E0849015382EFA00007A69 /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A5E0847215382EFA00007A69 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A5E0848A15382EFA00007A69 /* main.m in Sources */,
+				A5E0848D15382EFA00007A69 /* ZLuvContractAppDelegate.m in Sources */,
+				A5E0849315382EFA00007A69 /* ZLuvContract.xcdatamodeld in Sources */,
+				A5E0849B15382F1C00007A69 /* RootViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		A5E0848515382EFA00007A69 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5E0848615382EFA00007A69 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		A5E0848E15382EFA00007A69 /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A5E0848F15382EFA00007A69 /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A5E0849415382EFA00007A69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		A5E0849515382EFA00007A69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		A5E0849715382EFA00007A69 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZLuvContract/ZLuvContract-Prefix.pch";
+				INFOPLIST_FILE = "ZLuvContract/ZLuvContract-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		A5E0849815382EFA00007A69 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "ZLuvContract/ZLuvContract-Prefix.pch";
+				INFOPLIST_FILE = "ZLuvContract/ZLuvContract-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A5E0847015382EFA00007A69 /* Build configuration list for PBXProject "ZLuvContract" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5E0849415382EFA00007A69 /* Debug */,
+				A5E0849515382EFA00007A69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A5E0849615382EFA00007A69 /* Build configuration list for PBXNativeTarget "ZLuvContract" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A5E0849715382EFA00007A69 /* Debug */,
+				A5E0849815382EFA00007A69 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A5E0849115382EFA00007A69 /* ZLuvContract.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A5E0849215382EFA00007A69 /* ZLuvContract.xcdatamodel */,
+			);
+			currentVersion = A5E0849215382EFA00007A69 /* ZLuvContract.xcdatamodel */;
+			path = ZLuvContract.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A5E0846D15382EFA00007A69 /* Project object */;
+}
