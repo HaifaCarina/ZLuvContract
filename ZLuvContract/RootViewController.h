@@ -10,7 +10,7 @@
 
 
 @interface RootViewController : UIViewController {
-    
+    UIScrollView *framesScrollView;
 }
 
 @end
