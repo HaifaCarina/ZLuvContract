@@ -8,14 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "RootViewController.h"
-@interface ZLuvContractAppDelegate : NSObject <UIApplicationDelegate> {
+@interface ZLuvContractAppDelegate : NSObject <UIApplicationDelegate,FBSessionDelegate> {
     RootViewController *viewController;
     UINavigationController *navController;
+    Facebook *facebook;
 }
 
 @property (nonatomic, retain) UIWindow *window;
 @property (nonatomic, retain) RootViewController *viewController;
 @property (nonatomic, retain) UINavigationController *navController;
+@property (nonatomic, retain) Facebook *facebook;
+
 
 @property (nonatomic, retain, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, retain, readonly) NSManagedObjectModel *managedObjectModel;

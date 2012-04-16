@@ -7,7 +7,7 @@
 //
 
 #import "FrameViewController.h"
-
+#import "ZLuvContractAppDelegate.h"
 
 @implementation FrameViewController
 
@@ -73,5 +73,45 @@
 #pragma mark Custom Methods
 - (void) share {
     NSLog(@"share");
+    
+    ZLuvContractAppDelegate *delegate = (ZLuvContractAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    NSArray* permissions = [[NSArray alloc] initWithObjects:
+                            @"publish_stream",@"read_stream", nil];
+    [delegate.facebook authorize:permissions delegate:self];
+    [permissions release];
+
 }
+- (void)fbDidLogin {
+    NSLog(@"viewController DIDlogin");
+    
+    ZLuvContractAppDelegate *delegate = (ZLuvContractAppDelegate *)[[UIApplication sharedApplication] delegate];
+    
+    UIImage *image = [UIImage imageNamed:@"star.png"];
+    NSMutableDictionary *params1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                                    image, @"source", 
+                                    @"Kontrata de Amor", @"message",             
+                                    nil];
+    
+    [delegate.facebook requestWithGraphPath:@"/me/photos"
+                                  andParams:params1 andHttpMethod:@"POST" andDelegate:self];
+    
+}
+
+-(void)fbDidNotLogin:(BOOL)cancelled {
+	NSLog(@"viewController did not login");
+}
+
+- (void)request:(FBRequest *)request didLoad:(id)result {
+	if ([result isKindOfClass:[NSArray class]]) {
+		result = [result objectAtIndex:0];
+	}
+	NSLog(@"viewController Result of API call: %@", result);
+}
+
+- (void)request:(FBRequest *)request didFailWithError:(NSError *)error {
+    NSLog(@"viewController Failed with error: %@", [error localizedDescription]);
+    NSLog(@"viewController Error: %@", [error description]);
+}
+
 @end

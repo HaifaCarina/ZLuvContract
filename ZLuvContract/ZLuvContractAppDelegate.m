@@ -10,8 +10,9 @@
 
 @implementation ZLuvContractAppDelegate
 
-@synthesize viewController, navController;
+@synthesize navController, facebook;
 @synthesize window=_window;
+@synthesize viewController = _viewController;
 
 @synthesize managedObjectContext=__managedObjectContext;
 
@@ -21,6 +22,10 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    facebook = [[Facebook alloc] initWithAppId:@"221822304590918"];
+    
+    
+    //[facebook handleOpenURL:url];
     // Override point for customization after application launch.
     viewController = [[RootViewController alloc]init];
     navController = [[UINavigationController alloc]initWithRootViewController:viewController];
@@ -28,6 +33,11 @@
     [self.window addSubview:navController.view];
     [self.window makeKeyAndVisible];
     return YES;
+}
+
+- (BOOL)application:(UIApplication *)application handleOpenURL:(NSURL *)url {
+    NSLog(@"handle URL");
+    return [facebook handleOpenURL:url];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application

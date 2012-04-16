@@ -7,16 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Facebook.h"
 
-
-@interface FrameViewController : UIViewController {
+@interface FrameViewController : UIViewController <FBSessionDelegate, FBRequestDelegate>{
     int selectedTag;
     UIImage *selectedTemplate;
     CGRect scrollviewRect1;
     CGRect scrollviewRect2;
+    
 }
 @property (nonatomic) int selectedTag;
 @property (nonatomic, retain) UIImage *selectedTemplate;
+
 
 - (id) initWithTemplate:(UIImage *)templateImage tag: (int)tag;
 
