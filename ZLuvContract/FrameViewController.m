@@ -87,9 +87,9 @@
     
     ZLuvContractAppDelegate *delegate = (ZLuvContractAppDelegate *)[[UIApplication sharedApplication] delegate];
     
-    UIImage *image = [UIImage imageNamed:@"star.png"];
+    
     NSMutableDictionary *params1 = [NSMutableDictionary dictionaryWithObjectsAndKeys:
-                                    image, @"source", 
+                                    selectedTemplate, @"source", 
                                     @"Kontrata de Amor", @"message",             
                                     nil];
     
