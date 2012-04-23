@@ -47,10 +47,10 @@
     }
     
     
-    UIImageView *imgView = [[UIImageView alloc]initWithImage: selectedTemplate];
-    imgView.frame = CGRectMake(0, 0, 300, 300);
-    [imgView setCenter:CGPointMake(CGRectGetMidX([self.view bounds]), CGRectGetMidY([self.view bounds])-40)];
-    [self.view addSubview:imgView];
+    UIImageView *templateView = [[UIImageView alloc]initWithImage: selectedTemplate];
+    templateView.frame = CGRectMake(0, 0, 300, 300);
+    [templateView setCenter:CGPointMake(CGRectGetMidX([self.view bounds]), CGRectGetMidY([self.view bounds])-40)];
+    [self.view addSubview:templateView];
     
     UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	[shareButton addTarget:self  action:@selector(share) forControlEvents:UIControlEventTouchDown];
@@ -59,18 +59,70 @@
     shareButton.tag = 3;
 	[self.view addSubview:shareButton];
     
-    UIImageView *first = [[UIImageView alloc]initWithFrame:scrollviewRect1];
-    first.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:first];
+    // Initialize elements to display first image in template    
+    scrollview1 = [[UIScrollView alloc]initWithFrame: scrollviewRect1];
+    scrollview1.contentSize = photoView1.frame.size;
+    scrollview1.delegate = self;
+    scrollview1.maximumZoomScale = 50;
+    scrollview1.minimumZoomScale = .2;
+    scrollview1.tag = 1;
     
-    UIImageView *second = [[UIImageView alloc]initWithFrame:scrollviewRect2];
-    second.backgroundColor = [UIColor grayColor];
-    [self.view addSubview:second];
+    photoView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, scrollviewRect1.size.width,scrollviewRect1.size.height)];
+    photoView1.image = ([GlobalData sharedGlobalData].photo1 != nil)? [GlobalData sharedGlobalData].photo1: nil;
+    contentView1 = [[UIView alloc]init];
+    [contentView1 addSubview:photoView1];
+    [scrollview1 addSubview:contentView1];
     
+    UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured: ) ];
+    [scrollview1 addGestureRecognizer:singleTap1]; 
+    [singleTap1 release];
+    
+    [self.view addSubview:scrollview1];
+    
+    // Initialize elements to display second image in template
+    scrollview2 = [[UIScrollView alloc]initWithFrame: scrollviewRect2];
+    scrollview2.contentSize = photoView2.frame.size;
+    scrollview2.delegate = self;
+    scrollview2.maximumZoomScale = 50;
+    scrollview2.minimumZoomScale = .2;
+    scrollview2.tag = 2;
+    
+    photoView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, scrollviewRect2.size.width,scrollviewRect2.size.height)];
+    photoView2.image = ([GlobalData sharedGlobalData].photo2 != nil)? [GlobalData sharedGlobalData].photo2: nil;
+    contentView2 = [[UIView alloc]init];
+    [contentView2 addSubview:photoView2];
+    [scrollview2 addSubview:contentView2];
+    
+    UITapGestureRecognizer *singleTap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured: )];
+    [scrollview2 addGestureRecognizer:singleTap2]; 
+    [singleTap2 release];
+    
+    [self.view addSubview:scrollview2];
+
+    imgPicker = [[UIImagePickerController alloc] init];
+    imgPicker.allowsEditing = YES;
+    imgPicker.delegate = self;
+    imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
 
 #pragma mark -
 #pragma mark Custom Methods
+
+- (void) singleTapGestureCaptured : (id) sender {
+    
+    currentPhotoTag = [(UIGestureRecognizer *)sender view].tag;
+    
+    UIActionSheet *photoOptions = [[UIActionSheet alloc] initWithTitle:@"Photo"
+                                                              delegate:self cancelButtonTitle:@"Cancel"
+                                                destructiveButtonTitle:nil
+                                                     otherButtonTitles:@"From Library",@"From Camera",@"Effects",nil,nil];
+	
+	// use the same style as the nav bar
+	photoOptions.actionSheetStyle = self.navigationController.navigationBar.barStyle;
+	[photoOptions showInView:self.view];
+	[photoOptions release];
+    
+}
 - (void) share {
     NSLog(@"share");
     
@@ -82,6 +134,108 @@
     [permissions release];
 
 }
+#pragma mark -
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingImage:(UIImage *)img editingInfo:(NSDictionary *)editInfo {
+	
+    NSLog(@"image picker %d",currentPhotoTag);
+    switch (currentPhotoTag) {
+        case 1: {
+            photoView1.image = img;
+            photoView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            [GlobalData sharedGlobalData].photo1 = img;
+            break;
+        }
+        case 2:
+            //[photoView2 removeFromSuperview];
+            photoView2.image = img;
+            photoView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            photoView2.backgroundColor = [UIColor blueColor];
+            [GlobalData sharedGlobalData].photo2 = img;
+            //[contentView2 addSubview:photoView2];
+            break;
+            
+        default:
+            break;
+    }
+    
+	[[picker parentViewController] dismissModalViewControllerAnimated:YES];
+}
+#pragma mark -
+#pragma mark UIScrollView Delegate
+- (void)scrollViewWillBeginZooming:(UIScrollView *)scrollView withView:(UIView *)view {
+    
+}
+- (UIView*)viewForZoomingInScrollView:(UIScrollView *)aScrollView {
+    NSLog(@"%d",aScrollView.tag);
+    switch (aScrollView.tag) {
+        case 1:
+            return photoView1;
+            break;
+        case 2:
+            return photoView2;
+            break;
+    } 
+    return nil;
+}
+- (void)scrollViewDidEndZooming:(UIScrollView *)zoomedScrollView withView:(UIView *)view atScale:(float)scale
+{
+	NSLog(@"%f ", scale);
+}
+
+#pragma mark -
+#pragma mark UIActionSheetDelegate
+
+- (void)actionSheet:(UIActionSheet *)modalView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex)
+    {
+        case 0:
+        {
+            NSLog(@"Get From Library");
+            imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            [self presentModalViewController:imgPicker animated:YES];
+            break;
+        }
+        case 1:
+        {
+            NSLog(@"Camera");
+            imgPicker.sourceType = UIImagePickerControllerSourceTypeCamera;
+            [self presentModalViewController:imgPicker animated:YES];
+            break;
+        }
+        case 2:
+        {
+            NSLog(@"Effects");
+            
+            if (currentPhotoTag == 1) {
+                [GlobalData sharedGlobalData].currentPhotoView = photoView1;
+                [GlobalData sharedGlobalData].currentScrollView = scrollview1;
+                [GlobalData sharedGlobalData].currentPhotoTag = 1;
+                
+            } else {
+                [GlobalData sharedGlobalData].currentPhotoView = photoView2;
+                [GlobalData sharedGlobalData].currentScrollView = scrollview2;
+                [GlobalData sharedGlobalData].currentPhotoTag = 2;
+            }
+            
+            
+            /*PhotoEditViewController *aController = [[PhotoEditViewController alloc]init];
+            [self.navigationController pushViewController:aController animated:YES];
+            //aController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+            //[self presentModalViewController:aController animated:YES];
+            [aController release];
+            
+            */
+            
+            break;
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark Facebook Methods
 - (void)fbDidLogin {
     NSLog(@"viewController DIDlogin");
     
@@ -113,5 +267,6 @@
     NSLog(@"viewController Failed with error: %@", [error localizedDescription]);
     NSLog(@"viewController Error: %@", [error description]);
 }
+
 
 @end

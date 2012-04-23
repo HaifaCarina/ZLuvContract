@@ -40,6 +40,7 @@
 		A5E084CC153832A800007A69 /* spongebob.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E084C1153832A800007A69 /* spongebob.png */; };
 		A5E084CD153832A800007A69 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E084C2153832A800007A69 /* star.png */; };
 		A5E084D1153839D600007A69 /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E084D0153839D600007A69 /* FrameViewController.m */; };
+		A5F2F1D715450F1100D7E954 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F1D615450F1100D7E954 /* GlobalData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		A5E084C2153832A800007A69 /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
 		A5E084CF153839D600007A69 /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
 		A5E084D0153839D600007A69 /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
+		A5F2F1D515450F1100D7E954 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
+		A5F2F1D615450F1100D7E954 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,6 +183,7 @@
 		A5E0848215382EFA00007A69 /* ZLuvContract */ = {
 			isa = PBXGroup;
 			children = (
+				A5F2F1D415450F1100D7E954 /* GlobalData */,
 				A518796D153BE9DD000335ED /* FBConnect */,
 				A5E0848B15382EFA00007A69 /* ZLuvContractAppDelegate.h */,
 				A5E0848C15382EFA00007A69 /* ZLuvContractAppDelegate.m */,
@@ -246,6 +250,15 @@
 				A5E084C2153832A800007A69 /* star.png */,
 			);
 			path = stickers;
+			sourceTree = "<group>";
+		};
+		A5F2F1D415450F1100D7E954 /* GlobalData */ = {
+			isa = PBXGroup;
+			children = (
+				A5F2F1D515450F1100D7E954 /* GlobalData.h */,
+				A5F2F1D615450F1100D7E954 /* GlobalData.m */,
+			);
+			path = GlobalData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -337,6 +350,7 @@
 				A518798E153BE9DD000335ED /* SBJsonBase.m in Sources */,
 				A518798F153BE9DD000335ED /* SBJsonParser.m in Sources */,
 				A5187990153BE9DD000335ED /* SBJsonWriter.m in Sources */,
+				A5F2F1D715450F1100D7E954 /* GlobalData.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

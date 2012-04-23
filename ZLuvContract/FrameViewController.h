@@ -8,12 +8,23 @@
 
 #import <UIKit/UIKit.h>
 #import "Facebook.h"
+#import "GlobalData.h"
 
-@interface FrameViewController : UIViewController <FBSessionDelegate, FBRequestDelegate>{
+@interface FrameViewController : UIViewController <FBSessionDelegate, FBRequestDelegate, UIScrollViewDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     int selectedTag;
     UIImage *selectedTemplate;
+    
+    UIImageView *photoView1;
+    UIImageView *photoView2;
+    UIView *contentView1;
+    UIView *contentView2;
+    UIScrollView *scrollview1;
+    UIScrollView *scrollview2;
     CGRect scrollviewRect1;
     CGRect scrollviewRect2;
+    
+    UIImagePickerController *imgPicker;
+    int currentPhotoTag;
     
 }
 @property (nonatomic) int selectedTag;
