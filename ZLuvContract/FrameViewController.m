@@ -148,14 +148,11 @@
             break;
         }
         case 2:
-            //[photoView2 removeFromSuperview];
             photoView2.image = img;
             photoView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
             photoView2.backgroundColor = [UIColor blueColor];
             [GlobalData sharedGlobalData].photo2 = img;
-            //[contentView2 addSubview:photoView2];
             break;
-            
         default:
             break;
     }
@@ -221,13 +218,11 @@
             }
             
             
-            /*PhotoEditViewController *aController = [[PhotoEditViewController alloc]init];
+            PhotoEditViewController *aController = [[PhotoEditViewController alloc]init];
             [self.navigationController pushViewController:aController animated:YES];
             //aController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
             //[self presentModalViewController:aController animated:YES];
             [aController release];
-            
-            */
             
             break;
         }

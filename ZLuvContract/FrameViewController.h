@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "Facebook.h"
 #import "GlobalData.h"
+#import "PhotoEditViewController.h"
 
 @interface FrameViewController : UIViewController <FBSessionDelegate, FBRequestDelegate, UIScrollViewDelegate,UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>{
     int selectedTag;

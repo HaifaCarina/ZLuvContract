@@ -41,6 +41,7 @@
 		A5E084CD153832A800007A69 /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E084C2153832A800007A69 /* star.png */; };
 		A5E084D1153839D600007A69 /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E084D0153839D600007A69 /* FrameViewController.m */; };
 		A5F2F1D715450F1100D7E954 /* GlobalData.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F1D615450F1100D7E954 /* GlobalData.m */; };
+		A5F2F1E31545216A00D7E954 /* PhotoEditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5F2F1E21545216A00D7E954 /* PhotoEditViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +98,8 @@
 		A5E084D0153839D600007A69 /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
 		A5F2F1D515450F1100D7E954 /* GlobalData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GlobalData.h; sourceTree = "<group>"; };
 		A5F2F1D615450F1100D7E954 /* GlobalData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GlobalData.m; sourceTree = "<group>"; };
+		A5F2F1E11545216A00D7E954 /* PhotoEditViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoEditViewController.h; sourceTree = "<group>"; };
+		A5F2F1E21545216A00D7E954 /* PhotoEditViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoEditViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +194,8 @@
 				A5E0849A15382F1C00007A69 /* RootViewController.m */,
 				A5E084CF153839D600007A69 /* FrameViewController.h */,
 				A5E084D0153839D600007A69 /* FrameViewController.m */,
+				A5F2F1E11545216A00D7E954 /* PhotoEditViewController.h */,
+				A5F2F1E21545216A00D7E954 /* PhotoEditViewController.m */,
 				A5E0848315382EFA00007A69 /* Supporting Files */,
 			);
 			path = ZLuvContract;
@@ -351,6 +356,7 @@
 				A518798F153BE9DD000335ED /* SBJsonParser.m in Sources */,
 				A5187990153BE9DD000335ED /* SBJsonWriter.m in Sources */,
 				A5F2F1D715450F1100D7E954 /* GlobalData.m in Sources */,
+				A5F2F1E31545216A00D7E954 /* PhotoEditViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
