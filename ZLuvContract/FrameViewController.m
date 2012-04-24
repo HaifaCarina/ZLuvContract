@@ -63,7 +63,8 @@
     scrollview1.scrollEnabled = YES;
     scrollview1.showsHorizontalScrollIndicator = TRUE;
     scrollview1.showsVerticalScrollIndicator = TRUE;
-    scrollview1.contentSize = CGSizeMake(scrollviewRect1.size.width, scrollviewRect1.size.height);
+    scrollview1.contentSize = CGSizeMake([GlobalData sharedGlobalData].photoView1.image.size.width, [GlobalData sharedGlobalData].photoView1.image.size.height);
+    
     scrollview1.delegate = self;
     scrollview1.maximumZoomScale = 50;
     scrollview1.minimumZoomScale = .2;
@@ -71,6 +72,7 @@
     scrollview1.backgroundColor = [UIColor blueColor];
     
     contentView1 = [[UIView alloc]init];
+    contentView1.frame = CGRectMake(0, 0, [GlobalData sharedGlobalData].photoView1.image.size.width, [GlobalData sharedGlobalData].photoView1.image.size.height);
     [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
     [scrollview1 addSubview:contentView1];
     
@@ -84,7 +86,7 @@
     scrollview2.scrollEnabled = YES;
     scrollview2.showsHorizontalScrollIndicator = TRUE;
     scrollview2.showsVerticalScrollIndicator = TRUE;
-    scrollview2.contentSize = CGSizeMake(scrollviewRect2.size.width, scrollviewRect2.size.height);
+    scrollview2.contentSize = CGSizeMake([GlobalData sharedGlobalData].photoView2.image.size.width, [GlobalData sharedGlobalData].photoView2.image.size.height);
     scrollview2.delegate = self;
     scrollview2.maximumZoomScale = 50;
     scrollview2.minimumZoomScale = .2;
@@ -92,6 +94,7 @@
     scrollview2.backgroundColor = [UIColor blueColor];
     
     contentView2 = [[UIView alloc]init];
+    contentView2.frame = CGRectMake(0, 0, [GlobalData sharedGlobalData].photoView2.image.size.width, [GlobalData sharedGlobalData].photoView2.image.size.height);
     [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
     [scrollview2 addSubview:contentView2];
     
