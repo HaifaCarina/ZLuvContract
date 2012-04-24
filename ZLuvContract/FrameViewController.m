@@ -59,45 +59,50 @@
     shareButton.tag = 3;
 	[self.view addSubview:shareButton];
     
-    // Initialize elements to display first image in template    
     scrollview1 = [[UIScrollView alloc]initWithFrame: scrollviewRect1];
-    scrollview1.contentSize = photoView1.frame.size;
+    scrollview1.scrollEnabled = YES;
+    scrollview1.showsHorizontalScrollIndicator = TRUE;
+    scrollview1.showsVerticalScrollIndicator = TRUE;
+    scrollview1.contentSize = CGSizeMake(scrollviewRect1.size.width, scrollviewRect1.size.height);
     scrollview1.delegate = self;
     scrollview1.maximumZoomScale = 50;
     scrollview1.minimumZoomScale = .2;
     scrollview1.tag = 1;
+    scrollview1.backgroundColor = [UIColor blueColor];
     
-    photoView1 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, scrollviewRect1.size.width,scrollviewRect1.size.height)];
-    photoView1.image = ([GlobalData sharedGlobalData].photo1 != nil)? [GlobalData sharedGlobalData].photo1: nil;
     contentView1 = [[UIView alloc]init];
-    [contentView1 addSubview:photoView1];
+    [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
     [scrollview1 addSubview:contentView1];
     
     UITapGestureRecognizer *singleTap1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured: ) ];
-    [scrollview1 addGestureRecognizer:singleTap1]; 
+    [scrollview1 addGestureRecognizer:singleTap1];
     [singleTap1 release];
     
     [self.view addSubview:scrollview1];
     
-    // Initialize elements to display second image in template
     scrollview2 = [[UIScrollView alloc]initWithFrame: scrollviewRect2];
-    scrollview2.contentSize = photoView2.frame.size;
+    scrollview2.scrollEnabled = YES;
+    scrollview2.showsHorizontalScrollIndicator = TRUE;
+    scrollview2.showsVerticalScrollIndicator = TRUE;
+    scrollview2.contentSize = CGSizeMake(scrollviewRect2.size.width, scrollviewRect2.size.height);
     scrollview2.delegate = self;
     scrollview2.maximumZoomScale = 50;
     scrollview2.minimumZoomScale = .2;
     scrollview2.tag = 2;
+    scrollview2.backgroundColor = [UIColor blueColor];
     
-    photoView2 = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, scrollviewRect2.size.width,scrollviewRect2.size.height)];
-    photoView2.image = ([GlobalData sharedGlobalData].photo2 != nil)? [GlobalData sharedGlobalData].photo2: nil;
     contentView2 = [[UIView alloc]init];
-    [contentView2 addSubview:photoView2];
+    [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
     [scrollview2 addSubview:contentView2];
     
-    UITapGestureRecognizer *singleTap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured: )];
-    [scrollview2 addGestureRecognizer:singleTap2]; 
+    UITapGestureRecognizer *singleTap2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(singleTapGestureCaptured: ) ];
+    [scrollview2 addGestureRecognizer:singleTap2];
     [singleTap2 release];
     
     [self.view addSubview:scrollview2];
+    
+    
+    
 
     imgPicker = [[UIImagePickerController alloc] init];
     imgPicker.allowsEditing = YES;
@@ -142,17 +147,20 @@
     NSLog(@"image picker %d",currentPhotoTag);
     switch (currentPhotoTag) {
         case 1: {
-            photoView1.image = img;
-            photoView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
-            [GlobalData sharedGlobalData].photo1 = img;
+            [GlobalData sharedGlobalData].photoView1.image = img;
+            [GlobalData sharedGlobalData].photoView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            scrollview1.contentSize = CGSizeMake(img.size.width, img.size.height);
+            contentView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
             break;
         }
-        case 2:
-            photoView2.image = img;
-            photoView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
-            photoView2.backgroundColor = [UIColor blueColor];
-            [GlobalData sharedGlobalData].photo2 = img;
+        case 2: {
+            
+            [GlobalData sharedGlobalData].photoView2.image = img;
+            [GlobalData sharedGlobalData].photoView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            scrollview2.contentSize = CGSizeMake(img.size.width, img.size.height);
+            contentView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
             break;
+        }
         default:
             break;
     }
@@ -168,10 +176,10 @@
     NSLog(@"%d",aScrollView.tag);
     switch (aScrollView.tag) {
         case 1:
-            return photoView1;
+            return contentView1;
             break;
         case 2:
-            return photoView2;
+            return contentView2;
             break;
     } 
     return nil;

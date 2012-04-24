@@ -19,6 +19,9 @@
     UIImage *photo1;
     UIImage *photo2;
     
+    UIImageView *photoView1;
+    UIImageView *photoView2;
+    
 }
 
 @property (nonatomic, retain) UIImage *currentPhoto;
@@ -29,6 +32,8 @@
 @property (nonatomic) int fromEffectsTag;
 @property (nonatomic, retain) UIImage *photo1;
 @property (nonatomic, retain) UIImage *photo2;
+@property (nonatomic, retain) UIImageView *photoView1;
+@property (nonatomic, retain) UIImageView *photoView2;
 + (GlobalData*)sharedGlobalData;
 
 @end
