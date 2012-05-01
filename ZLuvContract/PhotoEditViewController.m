@@ -15,6 +15,7 @@
 - (void) loadView {
     [super loadView];
     stickersCount = 101;
+    
     UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] 
                                    initWithTitle:@"Done"                                            
                                    style:UIBarButtonItemStyleBordered 

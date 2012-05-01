@@ -177,20 +177,37 @@
             [scrollview2 setContentOffset:CGPointMake(tmpScrollView.contentOffset.x , tmpScrollView.contentOffset.y)];
         }
         [GlobalData sharedGlobalData].fromEffectsTag = 0;
-    } else {
+    } else { //if ([GlobalData sharedGlobalData].currentPhotoTag == 1)
         NSLog(@"not from DONE effects");
+        /*[contentView1 removeFromSuperview];
+        [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
+        [contentView1 sendSubviewToBack:[GlobalData sharedGlobalData].photoView1];
+        [scrollview1 addSubview:contentView1];
+        
+        [contentView2 removeFromSuperview];
+        [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
+        [contentView2 sendSubviewToBack:[GlobalData sharedGlobalData].photoView2];
+        [scrollview2 addSubview:contentView2];
+        */
+        
         
         if ([GlobalData sharedGlobalData].currentPhotoTag == 1) {
+            NSLog(@"not from DONE effects1");
             [contentView1 removeFromSuperview];
             [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
             [contentView1 sendSubviewToBack:[GlobalData sharedGlobalData].photoView1];
+            contentView1.frame = [GlobalData sharedGlobalData].photoView1.frame;
             [scrollview1 addSubview:contentView1];
+            
         } else {
+            NSLog(@"not from DONE effects2");
             [contentView2 removeFromSuperview];
             [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
             [contentView2 sendSubviewToBack:[GlobalData sharedGlobalData].photoView2];
+            contentView2.frame = [GlobalData sharedGlobalData].photoView1.frame;
             [scrollview2 addSubview:contentView2];
         }
+        
         
     }
 }
@@ -237,7 +254,7 @@
             scrollview1.zoomScale = 1;
             scrollview1.contentSize = CGSizeMake(img.size.width, img.size.height);
             contentView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
-            
+            NSLog(@"PICKER contentsize %f, %f", scrollview1.contentSize.width,scrollview1.contentSize.height);
             break;
         }
         case 2: {
@@ -274,6 +291,7 @@
 }
 - (void)scrollViewDidEndZooming:(UIScrollView *)zoomedScrollView withView:(UIView *)view atScale:(float)scale
 {
+    NSLog(@"SCALE contentsize %f, %f", scrollview1.contentSize.width,scrollview1.contentSize.height);
 	NSLog(@"%f ", scale);
 }
 
