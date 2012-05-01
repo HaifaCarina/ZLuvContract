@@ -148,7 +148,7 @@
                 [s release];
             }
             [scrollview1 addSubview:contentView1];
-            
+            [scrollview1 sendSubviewToBack:contentView1];
             // SET ZOOM SCALE AND OFFSETS
             // Must be set after all scrollview subviews are added
             [scrollview1 setZoomScale:tmpScrollView.zoomScale animated:NO];
@@ -183,12 +183,15 @@
         if ([GlobalData sharedGlobalData].currentPhotoTag == 1) {
             [contentView1 removeFromSuperview];
             [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
+            [contentView1 sendSubviewToBack:[GlobalData sharedGlobalData].photoView1];
             [scrollview1 addSubview:contentView1];
         } else {
             [contentView2 removeFromSuperview];
             [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
+            [contentView2 sendSubviewToBack:[GlobalData sharedGlobalData].photoView2];
             [scrollview2 addSubview:contentView2];
         }
+        
     }
 }
 #pragma mark -

@@ -4316,9 +4316,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357550160.656519</real>
-		<string>{0, 1741}</string>
-		<string>{635, 0}</string>
+		<real>357552070.08596402</real>
+		<string>{4417, 2437}</string>
+		<string>{6320, 79}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4416,7 +4416,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357549988.20953</real>
+		<real>357550449.12492102</real>
 		<string>{0, 711}</string>
 		<string>{631, 0}</string>
 		<dict>
@@ -5497,9 +5497,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357549708.931382</real>
-		<string>{5802, 2497}</string>
-		<string>{7029, 0}</string>
+		<real>357552500.051781</real>
+		<string>{7715, 1863}</string>
+		<string>{8262, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -6824,7 +6824,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>573</integer>
+					<integer>56</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7088,7 +7088,7 @@
 				<integer>590</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>357550041.75981599</real>
+			<real>357552280.04982299</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -7099,7 +7099,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 3:27 PM</string>
+		<string>Today at 4:04 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -7253,7 +7253,7 @@
 				<integer>603</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/PhotoEditViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7271,7 +7271,7 @@
 				<integer>605</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/PhotoEditViewController.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/PhotoEditViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7289,7 +7289,7 @@
 				<integer>607</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/PhotoEditViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7456,7 +7456,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>734</integer>
+					<integer>733</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7468,7 +7468,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>735</integer>
+					<integer>734</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7543,7 +7543,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>669</integer>
+					<integer>668</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7551,11 +7551,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>677</integer>
+					<integer>676</integer>
 				</dict>
 			</array>
 		</dict>
-		<string>PhotoEditViewController.m</string>
+		<string>FrameViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7688,7 +7688,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>648</integer>
+					<integer>647</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -7696,7 +7696,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>652</integer>
+					<integer>651</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7809,7 +7809,7 @@
 			</array>
 		</dict>
 		<string>ZLuvContract</string>
-		<string>PhotoEditViewController.m</string>
+		<string>FrameViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7837,10 +7837,6 @@
 				<dict>
 					<key>CF$UID</key>
 					<integer>646</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>647</integer>
 				</dict>
 			</array>
 		</dict>
@@ -7946,32 +7942,14 @@
 			<key>$class</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>37</integer>
-			</dict>
-			<key>NS.objects</key>
-			<array>
-				<dict>
-					<key>CF$UID</key>
-					<integer>639</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>56</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>63</integer>
-				</dict>
-			</array>
-		</dict>
-		<dict>
-			<key>$class</key>
-			<dict>
-				<key>CF$UID</key>
 				<integer>38</integer>
 			</dict>
 			<key>NS.keys</key>
 			<array>
+				<dict>
+					<key>CF$UID</key>
+					<integer>648</integer>
+				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>649</integer>
@@ -7979,10 +7957,6 @@
 				<dict>
 					<key>CF$UID</key>
 					<integer>650</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>651</integer>
 				</dict>
 			</array>
 			<key>NS.objects</key>
@@ -8012,6 +7986,10 @@
 			</dict>
 			<key>NS.keys</key>
 			<array>
+				<dict>
+					<key>CF$UID</key>
+					<integer>652</integer>
+				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>653</integer>
@@ -8048,16 +8026,16 @@
 					<key>CF$UID</key>
 					<integer>661</integer>
 				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>662</integer>
-				</dict>
 			</array>
 			<key>NS.objects</key>
 			<array>
 				<dict>
 					<key>CF$UID</key>
 					<integer>14</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>662</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8073,6 +8051,14 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
+					<integer>14</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>14</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>666</integer>
 				</dict>
 				<dict>
@@ -8081,19 +8067,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>14</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
 					<integer>667</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>14</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>668</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8170,7 +8144,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>670</integer>
+					<integer>669</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8184,15 +8158,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>671</integer>
+					<integer>670</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>673</integer>
+					<integer>672</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>675</integer>
+					<integer>674</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8221,7 +8195,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>672</integer>
+					<integer>671</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8251,7 +8225,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>674</integer>
+					<integer>673</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8281,7 +8255,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>676</integer>
+					<integer>675</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8335,11 +8309,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>678</integer>
+					<integer>677</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>693</integer>
+					<integer>692</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8351,15 +8325,15 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>717</integer>
+					<integer>716</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
+					<integer>722</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>723</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>724</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8404,11 +8378,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>679</integer>
+					<integer>678</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>680</integer>
+					<integer>679</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8416,11 +8390,11 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>686</integer>
+					<integer>685</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>692</integer>
+					<integer>691</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8462,7 +8436,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>681</integer>
+					<integer>680</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8476,11 +8450,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>682</integer>
+					<integer>681</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>684</integer>
+					<integer>683</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8509,7 +8483,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>683</integer>
+					<integer>682</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8539,7 +8513,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>685</integer>
+					<integer>684</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8561,7 +8535,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>687</integer>
+					<integer>686</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8575,11 +8549,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>688</integer>
+					<integer>687</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>690</integer>
+					<integer>689</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8608,7 +8582,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>689</integer>
+					<integer>688</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8638,7 +8612,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>691</integer>
+					<integer>690</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8681,7 +8655,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>694</integer>
+					<integer>693</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8702,7 +8676,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>695</integer>
+					<integer>694</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8731,7 +8705,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>696</integer>
+					<integer>695</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8739,7 +8713,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>715</integer>
+					<integer>714</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8753,7 +8727,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>697</integer>
+					<integer>696</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8798,19 +8772,19 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
+					<integer>697</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>698</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>699</integer>
+					<integer>707</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>708</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>712</integer>
+					<integer>711</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8822,7 +8796,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>713</integer>
+					<integer>712</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8836,17 +8810,17 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>706</integer>
+				<integer>705</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>700</integer>
+				<integer>699</integer>
 			</dict>
 			<key>IdentifierPath</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>701</integer>
+				<integer>700</integer>
 			</dict>
 			<key>IndexOfDocumentIdentifier</key>
 			<dict>
@@ -8865,15 +8839,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
+					<integer>701</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>702</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>703</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>704</integer>
 				</dict>
 			</array>
 		</dict>
@@ -8910,7 +8884,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>705</integer>
+				<integer>704</integer>
 			</dict>
 		</dict>
 		<string>ZLuvContract</string>
@@ -8923,7 +8897,7 @@
 			<key>documentURL</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>707</integer>
+				<integer>706</integer>
 			</dict>
 			<key>timestamp</key>
 			<dict>
@@ -8938,7 +8912,7 @@
 				<integer>101</integer>
 			</dict>
 			<key>NS.string</key>
-			<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/PhotoEditViewController.m</string>
+			<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.m</string>
 		</dict>
 		<dict>
 			<key>$class</key>
@@ -8969,11 +8943,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>709</integer>
+					<integer>708</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>710</integer>
+					<integer>709</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
@@ -8981,14 +8955,14 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>711</integer>
+					<integer>710</integer>
 				</dict>
 			</array>
 		</dict>
-		<real>357550160.65936702</real>
-		<string>{0, 1741}</string>
-		<string>{635, 0}</string>
-		<string>-loadView</string>
+		<real>357552500.05510598</real>
+		<string>{7715, 1863}</string>
+		<string>{8262, 0}</string>
+		<string>-viewWillAppear:</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9003,10 +8977,10 @@
 			<key>NS.relative</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>714</integer>
+				<integer>713</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/PhotoEditViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -9017,7 +8991,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>716</integer>
+					<integer>715</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9039,7 +9013,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>718</integer>
+					<integer>717</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9053,11 +9027,11 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>719</integer>
+					<integer>718</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>721</integer>
+					<integer>720</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9086,7 +9060,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>720</integer>
+					<integer>719</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9116,7 +9090,7 @@
 				</dict>
 				<dict>
 					<key>CF$UID</key>
-					<integer>722</integer>
+					<integer>721</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9146,12 +9120,12 @@
 			<key>primaryEditorContextNode</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>725</integer>
+				<integer>724</integer>
 			</dict>
 			<key>rootLayoutTreeNode</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>732</integer>
+				<integer>731</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -9170,14 +9144,14 @@
 			<key>documentArchivableRepresentation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>726</integer>
+				<integer>725</integer>
 			</dict>
 			<key>orientation</key>
 			<integer>0</integer>
 			<key>parent</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>732</integer>
+				<integer>731</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -9189,17 +9163,17 @@
 			<key>DocumentLocation</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>706</integer>
+				<integer>705</integer>
 			</dict>
 			<key>DomainIdentifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>700</integer>
+				<integer>699</integer>
 			</dict>
 			<key>IdentifierPath</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>727</integer>
+				<integer>726</integer>
 			</dict>
 			<key>IndexOfDocumentIdentifier</key>
 			<dict>
@@ -9217,15 +9191,15 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
+					<integer>727</integer>
+				</dict>
+				<dict>
+					<key>CF$UID</key>
 					<integer>728</integer>
 				</dict>
 				<dict>
 					<key>CF$UID</key>
 					<integer>729</integer>
-				</dict>
-				<dict>
-					<key>CF$UID</key>
-					<integer>730</integer>
 				</dict>
 			</array>
 		</dict>
@@ -9262,7 +9236,7 @@
 			<key>Identifier</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>731</integer>
+				<integer>730</integer>
 			</dict>
 		</dict>
 		<string>ZLuvContract</string>
@@ -9275,7 +9249,7 @@
 			<key>children</key>
 			<dict>
 				<key>CF$UID</key>
-				<integer>733</integer>
+				<integer>732</integer>
 			</dict>
 			<key>contentType</key>
 			<integer>0</integer>
@@ -9302,7 +9276,7 @@
 			<array>
 				<dict>
 					<key>CF$UID</key>
-					<integer>725</integer>
+					<integer>724</integer>
 				</dict>
 			</array>
 		</dict>
