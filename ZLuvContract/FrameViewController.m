@@ -70,7 +70,7 @@
     scrollview1.maximumZoomScale = 50;
     scrollview1.minimumZoomScale = .2;
     scrollview1.tag = 1;
-    scrollview1.backgroundColor = [UIColor blueColor];
+    //scrollview1.backgroundColor = [UIColor blueColor];
     
     contentView1 = [[UIView alloc]init];
     contentView1.frame = CGRectMake(0, 0, scrollviewRect1.size.width, scrollviewRect1.size.height);
@@ -124,7 +124,24 @@
     imgPicker.delegate = self;
     imgPicker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
 }
-
+- (void) viewWillAppear:(BOOL)animated {
+    if ([GlobalData sharedGlobalData].fromEffectsTag == 1) {
+        NSLog(@"not from DONE effects");
+        [GlobalData sharedGlobalData].fromEffectsTag = 0;
+    } else {
+        NSLog(@"not from DONE effects");
+        
+        if ([GlobalData sharedGlobalData].currentPhotoTag == 1) {
+            [contentView1 removeFromSuperview];
+            [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
+            [scrollview1 addSubview:contentView1];
+        } else {
+            [contentView2 removeFromSuperview];
+            [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
+            [scrollview2 addSubview:contentView2];
+        }
+    }
+}
 #pragma mark -
 #pragma mark Custom Methods
 
@@ -164,14 +181,19 @@
         case 1: {
             [GlobalData sharedGlobalData].photoView1.image = img;
             [GlobalData sharedGlobalData].photoView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            [GlobalData sharedGlobalData].photoView1.backgroundColor = [UIColor purpleColor];
+            
+            scrollview1.zoomScale = 1;
             scrollview1.contentSize = CGSizeMake(img.size.width, img.size.height);
             contentView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            
             break;
         }
         case 2: {
             
             [GlobalData sharedGlobalData].photoView2.image = img;
             [GlobalData sharedGlobalData].photoView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
+            scrollview2.zoomScale = 1;
             scrollview2.contentSize = CGSizeMake(img.size.width, img.size.height);
             contentView2.frame = CGRectMake(0, 0, img.size.width, img.size.height);
             break;
