@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
-
-
-@interface PhotoEditViewController : UIViewController {
+#import <QuartzCore/QuartzCore.h>
+#import "GlobalData.h"
+@interface PhotoEditViewController : UIViewController <UIScrollViewDelegate>{
     UIScrollView *filtersScrollView;
     UIScrollView *stickersScrollView;
+    
+    UIScrollView *imageScrollView;
+    UIView *contentView; 
+    
+    
 }
 
 @end

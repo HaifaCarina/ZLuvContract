@@ -10,12 +10,11 @@
 
 
 @implementation PhotoEditViewController
-
+#pragma mark -
+#pragma mark LifeCycle Methods
 - (void) loadView {
     [super loadView];
     UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 370, self.view.bounds.size.width, 50)];
-    
-    
     
     NSArray *itemArray = [NSArray arrayWithObjects: @"Filter", @"Stickers", nil];
     UISegmentedControl *segmentedControl = [[UISegmentedControl alloc] initWithItems:itemArray];
@@ -55,7 +54,6 @@
 	blueButton.tag = 3;
     [filtersScrollView addSubview:blueButton];
 
-    
     stickersScrollView = [[UIScrollView alloc]initWithFrame:effectsRect];
     stickersScrollView.backgroundColor = [UIColor greenColor];
     stickersScrollView.contentSize = CGSizeMake(500, 70);
@@ -103,8 +101,58 @@
     [singleTap4 release];
     [stickersScrollView addSubview:stickerView4];
     [stickerView4 release];
+    
+    UIScrollView *tmpScrollView = [GlobalData sharedGlobalData].currentScrollView;
+    imageScrollView = [[UIScrollView alloc]initWithFrame: CGRectMake(0, 0, tmpScrollView.frame.size.width, tmpScrollView.frame.size.height)];
+    imageScrollView.delegate = self;
+    imageScrollView.scrollEnabled = YES;
+    imageScrollView.showsHorizontalScrollIndicator = YES;
+    imageScrollView.showsVerticalScrollIndicator = YES;
+    
+    imageScrollView.maximumZoomScale = tmpScrollView.maximumZoomScale;
+    imageScrollView.minimumZoomScale = tmpScrollView.minimumZoomScale;
+    imageScrollView.backgroundColor = [UIColor greenColor];
+    
+    imageScrollView.contentSize = [GlobalData sharedGlobalData].currentPhotoView.frame.size;
+    contentView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, [GlobalData sharedGlobalData].currentPhotoView.frame.size.width, [GlobalData sharedGlobalData].currentPhotoView.frame.size.height)];
+    [contentView addSubview:[GlobalData sharedGlobalData].currentPhotoView];
+    [contentView sendSubviewToBack:[GlobalData sharedGlobalData].currentPhotoView];
+    [imageScrollView addSubview:contentView];
+    
+    // SET ZOOM SCALE AND OFFSETS
+    // Must be set after all scrollview subviews are added
+    [imageScrollView setZoomScale:tmpScrollView.zoomScale animated:NO];
+    [imageScrollView setContentOffset:CGPointMake(tmpScrollView.contentOffset.x , tmpScrollView.contentOffset.y)];
+    
+    [imageScrollView setCenter:CGPointMake(CGRectGetMidX([self.view bounds]), CGRectGetMidY([self.view bounds])-20)];
+    
+    CGSize pageSize1 = imageScrollView.frame.size;
+    UIGraphicsBeginImageContext(pageSize1);
+    CGContextRef resizedContext1 = UIGraphicsGetCurrentContext();
+    CGContextTranslateCTM(resizedContext1, -imageScrollView.contentOffset.x, -imageScrollView.contentOffset.y);
+    [imageScrollView.layer renderInContext:resizedContext1];
+    UIImage *p1 = UIGraphicsGetImageFromCurrentImageContext();
+    
+    UIGraphicsEndImageContext();
+    [imageScrollView release];
+    
+    UIImageView *photoView1 = [[UIImageView alloc]initWithImage:p1];
+    photoView1.frame = CGRectMake(0, 0, p1.size.width, p1.size.height);
+    
+    
+    contentView = [[UIView alloc]initWithFrame: photoView1.frame]; 
+    [contentView setCenter:CGPointMake(CGRectGetMidX([self.view bounds]), CGRectGetMidY([self.view bounds])-100)];
+    contentView.backgroundColor = [UIColor greenColor];
+    [contentView addSubview:photoView1];
+    [photoView1 release];
+    
+    
+    [self.view addSubview:contentView];
+    
 }
 
+#pragma mark -
+#pragma mark Custom Methods
 - (void) singleTapSticker: (id) sender {
     NSLog(@"tapped  a sticker");
 }
@@ -122,5 +170,18 @@
         [filtersScrollView removeFromSuperview];
         [self.view addSubview:stickersScrollView];
     }
+}
+#pragma mark -
+#pragma mark UIScrollView Delegate
+
+- (UIView*)viewForZoomingInScrollView:(UIScrollView *)aScrollView {
+    NSLog(@"PhotoEditView Zoom");
+    
+    return contentView;
+}
+- (void)scrollViewDidEndZooming:(UIScrollView *)zoomedScrollView withView:(UIView *)view atScale:(float)scale
+{
+    NSLog(@"view scale %f", scale);
+    
 }
 @end

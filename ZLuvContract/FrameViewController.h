@@ -15,8 +15,6 @@
     int selectedTag;
     UIImage *selectedTemplate;
     
-    UIImageView *photoView1;
-    UIImageView *photoView2;
     UIView *contentView1;
     UIView *contentView2;
     UIScrollView *scrollview1;

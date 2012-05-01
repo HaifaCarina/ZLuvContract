@@ -9,11 +9,11 @@
          continueAfterRunningActions = "No"
          isPathRelative = "1"
          filePath = "ZLuvContract/FrameViewController.m"
-         timestampString = "357538158.180351"
+         timestampString = "357538524.70432"
          startingColumnNumber = "9223372036854775807"
          endingColumnNumber = "9223372036854775807"
-         startingLineNumber = "78"
-         endingLineNumber = "78"
+         startingLineNumber = "77"
+         endingLineNumber = "77"
          landmarkName = "-loadView"
          landmarkType = "5">
       </FileBreakpoint>

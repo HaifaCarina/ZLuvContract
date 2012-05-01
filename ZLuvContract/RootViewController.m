@@ -26,8 +26,8 @@
     
     framesScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
     framesScrollView.scrollEnabled = YES;
-    framesScrollView.showsHorizontalScrollIndicator = TRUE;
-    framesScrollView.showsVerticalScrollIndicator = TRUE;
+    framesScrollView.showsHorizontalScrollIndicator = YES;
+    framesScrollView.showsVerticalScrollIndicator = YES;
     framesScrollView.contentSize = CGSizeMake(self.view.frame.size.width, [framesArray count] * 180);
     
     int yAxis = 10, imgCount = 0;

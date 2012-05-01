@@ -119,8 +119,6 @@
     [self.view addSubview:scrollview2];
     
     
-    
-
     imgPicker = [[UIImagePickerController alloc] init];
     imgPicker.allowsEditing = YES;
     imgPicker.delegate = self;
@@ -232,12 +230,12 @@
             NSLog(@"Effects");
             
             if (currentPhotoTag == 1) {
-                [GlobalData sharedGlobalData].currentPhotoView = photoView1;
+                [GlobalData sharedGlobalData].currentPhotoView = [GlobalData sharedGlobalData].photoView1;
                 [GlobalData sharedGlobalData].currentScrollView = scrollview1;
                 [GlobalData sharedGlobalData].currentPhotoTag = 1;
                 
             } else {
-                [GlobalData sharedGlobalData].currentPhotoView = photoView2;
+                [GlobalData sharedGlobalData].currentPhotoView = [GlobalData sharedGlobalData].photoView2;
                 [GlobalData sharedGlobalData].currentScrollView = scrollview2;
                 [GlobalData sharedGlobalData].currentPhotoTag = 2;
             }
