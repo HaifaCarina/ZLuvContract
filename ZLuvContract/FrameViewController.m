@@ -127,6 +127,55 @@
 - (void) viewWillAppear:(BOOL)animated {
     if ([GlobalData sharedGlobalData].fromEffectsTag == 1) {
         NSLog(@"not from DONE effects");
+        
+        UIScrollView *tmpScrollView = [GlobalData sharedGlobalData].currentScrollView;
+        
+        
+        if ([GlobalData sharedGlobalData].currentPhotoTag == 1) {
+            for (UIView *view in contentView1.subviews) {
+                [view removeFromSuperview];
+            }
+            [contentView1 removeFromSuperview];
+            [contentView1 addSubview:[GlobalData sharedGlobalData].currentPhotoView];
+            
+            for (UIImageView *h in [GlobalData sharedGlobalData].stickersArray) {
+                
+                UIImageView *s = [[UIImageView alloc]initWithImage: h.image];
+                
+                s.frame = CGRectMake((h.frame.origin.x + tmpScrollView.contentOffset.x) / tmpScrollView.zoomScale , (h.frame.origin.y + tmpScrollView.contentOffset.y ) / tmpScrollView.zoomScale , h.frame.size.width / tmpScrollView.zoomScale, h.frame.size.height / tmpScrollView.zoomScale);
+                s.transform=CGAffineTransformRotate(s.transform, atan2(h.transform.b, h.transform.a));
+                [contentView1 addSubview:s];
+                [s release];
+            }
+            [scrollview1 addSubview:contentView1];
+            
+            // SET ZOOM SCALE AND OFFSETS
+            // Must be set after all scrollview subviews are added
+            [scrollview1 setZoomScale:tmpScrollView.zoomScale animated:NO];
+            [scrollview1 setContentOffset:CGPointMake(tmpScrollView.contentOffset.x , tmpScrollView.contentOffset.y)];
+        } else {
+            for (UIView *view in contentView2.subviews) {
+                [view removeFromSuperview];
+            }
+            [contentView2 removeFromSuperview];
+            [contentView2 addSubview:[GlobalData sharedGlobalData].currentPhotoView];
+            
+            for (UIImageView *h in [GlobalData sharedGlobalData].stickersArray) {
+                
+                UIImageView *s = [[UIImageView alloc]initWithImage: h.image];
+                
+                s.frame = CGRectMake((h.frame.origin.x + tmpScrollView.contentOffset.x) / tmpScrollView.zoomScale , (h.frame.origin.y + tmpScrollView.contentOffset.y ) / tmpScrollView.zoomScale , h.frame.size.width / tmpScrollView.zoomScale, h.frame.size.height / tmpScrollView.zoomScale);
+                s.transform=CGAffineTransformRotate(s.transform, atan2(h.transform.b, h.transform.a));
+                [contentView2 addSubview:s];
+                [s release];
+            }
+            [scrollview2 addSubview:contentView2];
+            
+            // SET ZOOM SCALE AND OFFSETS
+            // Must be set after all scrollview subviews are added
+            [scrollview2 setZoomScale:tmpScrollView.zoomScale animated:NO];
+            [scrollview2 setContentOffset:CGPointMake(tmpScrollView.contentOffset.x , tmpScrollView.contentOffset.y)];
+        }
         [GlobalData sharedGlobalData].fromEffectsTag = 0;
     } else {
         NSLog(@"not from DONE effects");

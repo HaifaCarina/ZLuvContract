@@ -15,6 +15,14 @@
 - (void) loadView {
     [super loadView];
     stickersCount = 101;
+    UIBarButtonItem *doneButton = [[UIBarButtonItem alloc] 
+                                   initWithTitle:@"Done"                                            
+                                   style:UIBarButtonItemStyleBordered 
+                                   target:self 
+                                   action:@selector(doneAction)];
+    
+    self.navigationItem.rightBarButtonItem = doneButton;
+    [doneButton release];
     
     UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 370, self.view.bounds.size.width, 50)];
     
@@ -148,6 +156,9 @@
     [contentView addSubview:photoView1];
     [photoView1 release];
     
+    for (UIImageView *s in [GlobalData sharedGlobalData].stickersArray) {
+        [contentView addSubview:s];
+    }
     
     [self.view addSubview:contentView];
     
@@ -155,6 +166,10 @@
 
 #pragma mark -
 #pragma mark Custom Methods
+- (void) doneAction {
+    NSLog(@"done!");
+    [GlobalData sharedGlobalData].fromEffectsTag = 1;
+}
 - (void) singleTapSticker: (id) sender {
     NSLog(@"tapped  a sticker");
 }

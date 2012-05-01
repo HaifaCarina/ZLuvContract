@@ -4316,9 +4316,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357549269.237459</real>
-		<string>{11199, 1275}</string>
-		<string>{11462, 0}</string>
+		<real>357550160.656519</real>
+		<string>{0, 1741}</string>
+		<string>{635, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -4416,7 +4416,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357549160.18632698</real>
+		<real>357549988.20953</real>
 		<string>{0, 711}</string>
 		<string>{631, 0}</string>
 		<dict>
@@ -5116,7 +5116,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357548432.68496001</real>
+		<real>357549707.739021</real>
 		<string>{0, 937}</string>
 		<string>{521, 0}</string>
 		<dict>
@@ -5497,9 +5497,9 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357548471.724123</real>
-		<string>{6486, 1685}</string>
-		<string>{6929, 0}</string>
+		<real>357549708.931382</real>
+		<string>{5802, 2497}</string>
+		<string>{7029, 0}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7088,7 +7088,7 @@
 				<integer>590</integer>
 			</dict>
 			<key>NS.time</key>
-			<real>357549203.14944202</real>
+			<real>357550041.75981599</real>
 		</dict>
 		<dict>
 			<key>$classes</key>
@@ -7099,7 +7099,7 @@
 			<key>$classname</key>
 			<string>NSDate</string>
 		</dict>
-		<string>Today at 3:13 PM</string>
+		<string>Today at 3:27 PM</string>
 		<integer>106</integer>
 		<dict>
 			<key>$class</key>
@@ -7289,7 +7289,7 @@
 				<integer>607</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/GlobalData/GlobalData.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7307,7 +7307,7 @@
 				<integer>609</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/GlobalData/GlobalData.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7325,7 +7325,7 @@
 				<integer>611</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/main.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/GlobalData/GlobalData.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7343,7 +7343,7 @@
 				<integer>613</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.m</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/GlobalData/GlobalData.h</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -7361,7 +7361,7 @@
 				<integer>615</integer>
 			</dict>
 		</dict>
-		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/FrameViewController.h</string>
+		<string>file://localhost/Users/haifa/Documents/Haifa/iOS/TheLoveContract/ZLuvContract/ZLuvContract/main.m</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -8985,10 +8985,10 @@
 				</dict>
 			</array>
 		</dict>
-		<real>357549269.24092001</real>
-		<string>{11199, 1275}</string>
-		<string>{11462, 0}</string>
-		<string>-touchesMoved:withEvent:</string>
+		<real>357550160.65936702</real>
+		<string>{0, 1741}</string>
+		<string>{635, 0}</string>
+		<string>-loadView</string>
 		<dict>
 			<key>$class</key>
 			<dict>
