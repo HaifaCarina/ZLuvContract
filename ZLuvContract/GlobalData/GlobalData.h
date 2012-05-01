@@ -21,6 +21,7 @@
     
     UIImageView *photoView1;
     UIImageView *photoView2;
+    NSMutableArray *stickersArray;
     
 }
 
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) UIImage *photo2;
 @property (nonatomic, retain) UIImageView *photoView1;
 @property (nonatomic, retain) UIImageView *photoView2;
+@property (nonatomic, retain) NSMutableArray *stickersArray;
 + (GlobalData*)sharedGlobalData;
 
 @end

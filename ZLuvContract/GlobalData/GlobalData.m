@@ -10,7 +10,7 @@
 
 
 @implementation GlobalData
-@synthesize currentPhoto,currentPhotoView, currentScrollView, currentPhotoTag, fromEffectsTag, sticker,photo1, photo2, photoView1, photoView2;
+@synthesize currentPhoto,currentPhotoView, currentScrollView, currentPhotoTag, fromEffectsTag, sticker,photo1, photo2, photoView1, photoView2,stickersArray;
 
 static GlobalData *sharedGlobalData = nil;
 + (GlobalData*)sharedGlobalData {
@@ -28,7 +28,7 @@ static GlobalData *sharedGlobalData = nil;
         sharedGlobalData.photo2 = nil;
         sharedGlobalData.photoView1 = [[UIImageView alloc]init];
         sharedGlobalData.photoView2 = [[UIImageView alloc]init];
-    
+        sharedGlobalData.stickersArray = [[NSMutableArray alloc]init];
 		
     }
     return sharedGlobalData;

@@ -14,6 +14,8 @@
 #pragma mark LifeCycle Methods
 - (void) loadView {
     [super loadView];
+    stickersCount = 101;
+    
     UINavigationBar *navBar = [[UINavigationBar alloc]initWithFrame:CGRectMake(0, 370, self.view.bounds.size.width, 50)];
     
     NSArray *itemArray = [NSArray arrayWithObjects: @"Filter", @"Stickers", nil];
@@ -58,7 +60,7 @@
     stickersScrollView.backgroundColor = [UIColor greenColor];
     stickersScrollView.contentSize = CGSizeMake(500, 70);
     
-    UIImage *sticker1 = [UIImage imageNamed:@"spongebob.png"];
+    sticker1 = [UIImage imageNamed:@"spongebob.png"];
     UIImageView *stickerView1 = [[UIImageView alloc]initWithImage:sticker1];
     stickerView1.frame = CGRectMake(0, 10, 50,50);
     stickerView1.tag = 1;
@@ -69,7 +71,7 @@
     [stickersScrollView addSubview:stickerView1];
     [stickerView1 release];
     
-    UIImage *sticker2 = [UIImage imageNamed:@"bunny.png"];
+    sticker2 = [UIImage imageNamed:@"bunny.png"];
     UIImageView *stickerView2 = [[UIImageView alloc]initWithImage:sticker2];
     stickerView2.frame = CGRectMake(60, 10, 50,50);
     stickerView2.tag = 2;
@@ -80,7 +82,7 @@
     [stickersScrollView addSubview:stickerView2];
     [stickerView2 release];
     
-    UIImage *sticker3 = [UIImage imageNamed:@"heart.png"];
+    sticker3 = [UIImage imageNamed:@"heart.png"];
     UIImageView *stickerView3 = [[UIImageView alloc]initWithImage:sticker3];
     stickerView3.frame = CGRectMake(120, 10, 50,50);
     stickerView3.tag = 3;
@@ -91,7 +93,7 @@
     [stickersScrollView addSubview:stickerView3];
     [stickerView3 release];
     
-    UIImage *sticker4 = [UIImage imageNamed:@"star.png"];
+    sticker4 = [UIImage imageNamed:@"star.png"];
     UIImageView *stickerView4 = [[UIImageView alloc]initWithImage:sticker4];
     stickerView4.frame = CGRectMake(180, 10, 50,50);
     stickerView4.tag = 4;
@@ -170,6 +172,144 @@
         [filtersScrollView removeFromSuperview];
         [self.view addSubview:stickersScrollView];
     }
+}
+- (void) addSticker: (UIImage *)img{
+    UIImageView *imgView = [[UIImageView alloc]initWithImage:img];
+    imgView.frame = CGRectMake(0, 0, 50, 50);
+    imgView.tag = stickersCount;
+    stickersCount++;
+    imgView.userInteractionEnabled = YES;
+    
+    [contentView addSubview:imgView];
+    [[GlobalData sharedGlobalData].stickersArray addObject:imgView];
+    [imgView release];
+    
+}
+- (void) singleTapGestureCaptured: (UITapGestureRecognizer *) recognizer {
+    NSLog(@"%d",[recognizer view].tag);
+    
+    switch ([recognizer view].tag) {
+        case 1: 
+            [self addSticker:sticker1];
+            break;
+        case 2: 
+            [self addSticker:sticker2];
+            break;
+        case 3: 
+            [self addSticker:sticker3];
+            break;
+        case 4: 
+            [self addSticker:sticker4];
+            break;
+            
+    }
+    
+}
+
+#pragma mark -
+#pragma mark Touches & Moves Delegate
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    UITouch *touch = [[event allTouches] anyObject];
+    
+    contentView.backgroundColor = [UIColor greenColor];
+    for (int i = 1; i < [[contentView subviews] count]; i++ ) {
+        UIImageView *aView = [[contentView subviews] objectAtIndex:i];
+        
+        if (CGRectContainsPoint([aView frame], [touch locationInView:contentView])) {
+            sticker = aView;
+        }
+    }
+    
+    // If triple tap remove sticker
+    if ([touch tapCount] == 3) {
+        NSLog(@"remove sticker");
+        [sticker removeFromSuperview];
+        [[GlobalData sharedGlobalData].stickersArray removeObjectIdenticalTo:sticker];
+    } else {
+        
+        NSArray *allTouches = [touches allObjects];
+        
+        UITouch* t;
+        if([[event allTouches] count]==1){
+            if (CGRectContainsPoint([sticker frame], [[allTouches objectAtIndex:0] locationInView:contentView])) {
+                t=[[[event allTouches] allObjects] objectAtIndex:0];
+                touch1=[t locationInView:nil];
+            }
+        }else{
+            t=[[[event allTouches] allObjects] objectAtIndex:0];
+            touch1=[t locationInView:nil];
+            t=[[[event allTouches] allObjects] objectAtIndex:1];
+            touch2=[t locationInView:nil];
+        }
+        
+        
+    }
+}
+
+-(double)distance:(CGPoint)point1 toPoint:(CGPoint)point2
+{
+	double deltaX, deltaY;
+	deltaX = point1.x - point2.x;
+	deltaY = point1.y - point2.y;
+	return sqrt(deltaX * deltaX + deltaY * deltaY);
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	CGPoint currentTouch1;
+	CGPoint currentTouch2;
+	NSArray *allTouches = [touches allObjects];
+	UITouch* t;
+	float scale = 1;
+    rotation = 0;
+	
+	if([[event allTouches] count]==1){
+		t=[[[event allTouches] allObjects] objectAtIndex:0];
+		if (CGRectContainsPoint([sticker frame], [[allTouches objectAtIndex:0] locationInView:contentView]) )
+		{ 
+			touch2=[t locationInView:nil];
+			sticker.center=CGPointMake(sticker.center.x+touch2.x-touch1.x,sticker.center.y+touch2.y-touch1.y);
+			touch1=touch2;
+		}
+	}
+	else if([[event allTouches] count]==2)
+	{
+		t=[[[event allTouches] allObjects] objectAtIndex:0];
+		currentTouch1=[t locationInView:nil];
+		
+		t=[[[event allTouches] allObjects] objectAtIndex:1];
+		currentTouch2=[t locationInView:nil];
+		
+		double distance1 =  [self distance:currentTouch1 toPoint:currentTouch2];
+		double distance2 = [self distance:touch1 toPoint:touch2];
+		
+		if (distance2 == 0)
+		{
+			//handle the case where distance is zero
+		}
+		else {
+			scale =distance1 / distance2;
+        }
+        
+		rotation = atan2(currentTouch2.y-currentTouch1.y, currentTouch2.x-currentTouch1.x)-atan2(touch2.y-touch1.y,touch2.x-touch1.x);
+        //rotation = angle - rotation; 
+        
+		if(isnan(scale)){
+			scale=1.0f;
+		}
+		
+        sticker.transform=CGAffineTransformScale(sticker.transform, scale,scale);
+        sticker.transform=CGAffineTransformRotate(sticker.transform, rotation);
+        
+		touch1=currentTouch1;
+		touch2=currentTouch2;
+	}
+}
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+    
+    angle = atan2(sticker.transform.b, sticker.transform.a);
+    NSLog(@"touch ended with angle %f", angle);
 }
 #pragma mark -
 #pragma mark UIScrollView Delegate

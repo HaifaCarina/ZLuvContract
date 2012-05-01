@@ -16,7 +16,19 @@
     UIScrollView *imageScrollView;
     UIView *contentView; 
     
+    UIImage *sticker1;
+    UIImage *sticker2;
+    UIImage *sticker3;
+    UIImage *sticker4;
     
+    int stickersCount;
+    float rotation;
+    float angle;
+    
+    CGPoint touch1;
+    CGPoint touch2;
+    
+    UIImageView *sticker;
 }
 
 @end

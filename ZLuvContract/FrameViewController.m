@@ -70,7 +70,7 @@
     scrollview1.maximumZoomScale = 50;
     scrollview1.minimumZoomScale = .2;
     scrollview1.tag = 1;
-    //scrollview1.backgroundColor = [UIColor blueColor];
+    
     
     contentView1 = [[UIView alloc]init];
     contentView1.frame = CGRectMake(0, 0, scrollviewRect1.size.width, scrollviewRect1.size.height);
@@ -98,7 +98,7 @@
     scrollview2.maximumZoomScale = 50;
     scrollview2.minimumZoomScale = .2;
     scrollview2.tag = 2;
-    scrollview2.backgroundColor = [UIColor blueColor];
+    
     
     contentView2 = [[UIView alloc]init];
     contentView2.frame = CGRectMake(0, 0, scrollviewRect2.size.width, scrollviewRect2.size.height);
@@ -181,7 +181,6 @@
         case 1: {
             [GlobalData sharedGlobalData].photoView1.image = img;
             [GlobalData sharedGlobalData].photoView1.frame = CGRectMake(0, 0, img.size.width, img.size.height);
-            [GlobalData sharedGlobalData].photoView1.backgroundColor = [UIColor purpleColor];
             
             scrollview1.zoomScale = 1;
             scrollview1.contentSize = CGSizeMake(img.size.width, img.size.height);
