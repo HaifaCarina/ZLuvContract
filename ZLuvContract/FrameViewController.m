@@ -73,13 +73,13 @@
     scrollview1.backgroundColor = [UIColor blueColor];
     
     contentView1 = [[UIView alloc]init];
-    
-    if ([GlobalData sharedGlobalData].photoView1.image == nil) {
+    contentView1.frame = CGRectMake(0, 0, scrollviewRect1.size.width, scrollviewRect1.size.height);
+    /*if ([GlobalData sharedGlobalData].photoView1.image == nil) {
         contentView1.frame = CGRectMake(0, 0, scrollviewRect1.size.width, scrollviewRect1.size.height);
     }else {
         contentView1.frame = CGRectMake(0, 0, [GlobalData sharedGlobalData].photoView1.image.size.width, [GlobalData sharedGlobalData].photoView1.image.size.height);
     }
-    
+    */
     [contentView1 addSubview:[GlobalData sharedGlobalData].photoView1];
     [scrollview1 addSubview:contentView1];
     
@@ -101,13 +101,14 @@
     scrollview2.backgroundColor = [UIColor blueColor];
     
     contentView2 = [[UIView alloc]init];
-    
+    contentView2.frame = CGRectMake(0, 0, scrollviewRect2.size.width, scrollviewRect2.size.height);
+    /*
     if ([GlobalData sharedGlobalData].photoView2.image == nil) {
         contentView2.frame = CGRectMake(0, 0, scrollviewRect2.size.width, scrollviewRect2.size.height);
     }else {
         contentView2.frame = CGRectMake(0, 0, [GlobalData sharedGlobalData].photoView2.image.size.width, [GlobalData sharedGlobalData].photoView2.image.size.height);
     }
-    
+    */
     [contentView2 addSubview:[GlobalData sharedGlobalData].photoView2];
     [scrollview2 addSubview:contentView2];
     
