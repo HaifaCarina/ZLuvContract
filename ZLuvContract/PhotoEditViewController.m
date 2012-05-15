@@ -10,6 +10,62 @@
 
 
 @implementation PhotoEditViewController
+- (UIImage *) blackAndWhiteEffect: (UIImage *)originalImage {
+    
+    //UIImage *originalImage = [UIImage imageNamed:@"frame.png"]; // this image we get from UIImagePickerController
+    CGColorSpaceRef colorSapce = CGColorSpaceCreateDeviceGray();
+    
+    
+    CGContextRef context = CGBitmapContextCreate(nil, originalImage.size.width, originalImage.size.height, 8, originalImage.size.width, colorSapce, kCGImageAlphaNone);
+    CGContextSetInterpolationQuality(context, kCGInterpolationHigh);
+    CGContextSetShouldAntialias(context, NO);
+    CGContextDrawImage(context, CGRectMake(0, 0, originalImage.size.width, originalImage.size.height), [originalImage CGImage]);
+    
+    CGImageRef bwImage = CGBitmapContextCreateImage(context);
+    CGContextRelease(context);
+    CGColorSpaceRelease(colorSapce);
+    
+    UIImage *resultImage = [UIImage imageWithCGImage:bwImage]; // This is result B/W image.
+    CGImageRelease(bwImage);
+    
+    return resultImage;
+}
+- (UIImage *) sepiaEffect: (UIImage *)originalImage {
+    
+    UIImageView *imgView = [[UIImageView alloc]initWithImage:originalImage];
+    
+    UIGraphicsBeginImageContext(CGSizeMake(imgView.image.size.width,imgView.image.size.height));  
+	
+	CGRect imageRect = CGRectMake(0, 0, imgView.image.size.width, imgView.image.size.height);
+	[imgView.image drawInRect:imageRect]; 
+	[[UIImage imageNamed:@"sepia.png"] drawInRect:imageRect blendMode:kCGBlendModeScreen alpha:0.5];  
+	
+	UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();  
+	UIGraphicsEndImageContext();
+    
+    [imgView release];
+    return resultImage;
+    
+}
+
+- (UIImage *) blueEffect: (UIImage *)originalImage {
+    
+    UIImageView *imgView = [[UIImageView alloc]initWithImage:originalImage];
+    
+    UIGraphicsBeginImageContext(CGSizeMake(imgView.image.size.width,imgView.image.size.height));  
+	
+	CGRect imageRect = CGRectMake(0, 0, imgView.image.size.width, imgView.image.size.height);
+	[imgView.image drawInRect:imageRect]; 
+	[[UIImage imageNamed:@"blue.png"] drawInRect:imageRect blendMode:kCGBlendModeScreen alpha:0.9];  
+	
+	UIImage *resultImage = UIGraphicsGetImageFromCurrentImageContext();  
+	UIGraphicsEndImageContext();
+    
+    [imgView release];
+    return resultImage;
+    
+}
+
 #pragma mark -
 #pragma mark LifeCycle Methods
 - (void) loadView {
@@ -149,7 +205,7 @@
     
     UIImageView *photoView1 = [[UIImageView alloc]initWithImage:p1];
     photoView1.frame = CGRectMake(0, 0, p1.size.width, p1.size.height);
-    
+    //photoView1.image = [self blueEffect: p1]; //blackAndWhiteEffect //sepiaEffect
     
     contentView = [[UIView alloc]initWithFrame: photoView1.frame]; 
     [contentView setCenter:CGPointMake(CGRectGetMidX([self.view bounds]), CGRectGetMidY([self.view bounds])-100)];
@@ -237,6 +293,7 @@
     }
     
 }
+
 
 #pragma mark -
 #pragma mark Touches & Moves Delegate
