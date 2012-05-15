@@ -21,7 +21,9 @@
     [framesArray addObject:[UIImage imageNamed:@"2.jpeg"]];
     [framesArray addObject:[UIImage imageNamed:@"3.jpg"]];
     [framesArray addObject:[UIImage imageNamed:@"4.jpg"]];
-    
+    [framesArray addObject:[UIImage imageNamed:@"baroque.png"]];
+    [framesArray addObject:[UIImage imageNamed:@"blackandwhite.png"]];
+    [framesArray addObject:[UIImage imageNamed:@"blue&whitehearts.png"]];
     
     
     framesScrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];

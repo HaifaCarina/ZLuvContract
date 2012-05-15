@@ -41,7 +41,19 @@
         case 3: 
             scrollviewRect1 = CGRectMake(40, 100, 100, 160);
             scrollviewRect2 = CGRectMake(190, 100, 100, 160);
-            break;    
+            break; 
+        case 4: //baroque
+            scrollviewRect1 = CGRectMake(32, 80, 125, 110);
+            scrollviewRect2 = CGRectMake(165, 80, 125, 110);
+            break;
+        case 5: //blackandwhite
+            scrollviewRect1 = CGRectMake(39, 68, 87, 134);
+            scrollviewRect2 = CGRectMake(195, 68, 89, 134);
+            break;
+        case 6: //blackbluecirlces
+            scrollviewRect1 = CGRectMake(33, 70, 115, 115);
+            scrollviewRect2 = CGRectMake(172, 70, 115, 115);
+            break;
         default:
             break;
     }
@@ -60,7 +72,7 @@
 	[self.view addSubview:shareButton];
     
     scrollview1 = [[UIScrollView alloc]initWithFrame: scrollviewRect1];
-    
+    //scrollview1.backgroundColor = [UIColor redColor];
     scrollview1.scrollEnabled = YES;
     scrollview1.showsHorizontalScrollIndicator = TRUE;
     scrollview1.showsVerticalScrollIndicator = TRUE;
@@ -90,6 +102,7 @@
     [self.view addSubview:scrollview1];
     
     scrollview2 = [[UIScrollView alloc]initWithFrame: scrollviewRect2];
+    //scrollview2.backgroundColor = [UIColor blueColor];
     scrollview2.scrollEnabled = YES;
     scrollview2.showsHorizontalScrollIndicator = TRUE;
     scrollview2.showsVerticalScrollIndicator = TRUE;
