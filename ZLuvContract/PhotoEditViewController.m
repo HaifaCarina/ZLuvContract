@@ -174,6 +174,22 @@
 - (void) singleTapSticker: (id) sender {
     NSLog(@"tapped  a sticker");
 }
+- (void) selectfilter: (UIButton *) button {
+    NSLog(@"selectfilter %d", button.tag);
+    
+    switch (button.tag) {
+        case 1:
+            NSLog(@"b&w");
+            break;
+        case 2:
+            NSLog(@"sepia");
+            break;
+        case 3:
+            NSLog(@"blue");
+            break;
+            
+    }
+}
 - (void) segmentedControlAction: (UISegmentedControl *)segmentedControl {
     
     if ([segmentedControl selectedSegmentIndex] == 0) 
