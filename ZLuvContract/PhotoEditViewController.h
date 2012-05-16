@@ -29,6 +29,11 @@
     CGPoint touch2;
     
     UIImageView *sticker;
+    
+    UIImage *p1;
+    UIImageView *photoView1;
+    
+    int filterTag;
 }
 
 @end

@@ -70,6 +70,7 @@
     shareButton.frame = CGRectMake(130.0, 370.0, 80.0,40.0);
     shareButton.tag = 3;
 	[self.view addSubview:shareButton];
+    //[shareButton release];
     
     scrollview1 = [[UIScrollView alloc]initWithFrame: scrollviewRect1];
     //scrollview1.backgroundColor = [UIColor redColor];

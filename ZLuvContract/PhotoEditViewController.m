@@ -10,8 +10,9 @@
 
 
 @implementation PhotoEditViewController
+
 - (UIImage *) blackAndWhiteEffect: (UIImage *)originalImage {
-    
+    NSLog(@"B&w effect");
     //UIImage *originalImage = [UIImage imageNamed:@"frame.png"]; // this image we get from UIImagePickerController
     CGColorSpaceRef colorSapce = CGColorSpaceCreateDeviceGray();
     
@@ -31,7 +32,7 @@
     return resultImage;
 }
 - (UIImage *) sepiaEffect: (UIImage *)originalImage {
-    
+    NSLog(@"sepia effect");
     UIImageView *imgView = [[UIImageView alloc]initWithImage:originalImage];
     
     UIGraphicsBeginImageContext(CGSizeMake(imgView.image.size.width,imgView.image.size.height));  
@@ -49,7 +50,7 @@
 }
 
 - (UIImage *) blueEffect: (UIImage *)originalImage {
-    
+    NSLog(@"Blue effect");
     UIImageView *imgView = [[UIImageView alloc]initWithImage:originalImage];
     
     UIGraphicsBeginImageContext(CGSizeMake(imgView.image.size.width,imgView.image.size.height));  
@@ -198,12 +199,12 @@
     CGContextRef resizedContext1 = UIGraphicsGetCurrentContext();
     CGContextTranslateCTM(resizedContext1, -imageScrollView.contentOffset.x, -imageScrollView.contentOffset.y);
     [imageScrollView.layer renderInContext:resizedContext1];
-    UIImage *p1 = UIGraphicsGetImageFromCurrentImageContext();
+    p1 = UIGraphicsGetImageFromCurrentImageContext();
     
     UIGraphicsEndImageContext();
     [imageScrollView release];
     
-    UIImageView *photoView1 = [[UIImageView alloc]initWithImage:p1];
+    photoView1 = [[UIImageView alloc]initWithImage:p1];
     photoView1.frame = CGRectMake(0, 0, p1.size.width, p1.size.height);
     //photoView1.image = [self blueEffect: p1]; //blackAndWhiteEffect //sepiaEffect
     
@@ -211,14 +212,15 @@
     [contentView setCenter:CGPointMake(CGRectGetMidX([self.view bounds]), CGRectGetMidY([self.view bounds])-100)];
     contentView.backgroundColor = [UIColor greenColor];
     [contentView addSubview:photoView1];
-    [photoView1 release];
+    //[photoView1 release];
     
     for (UIImageView *s in [GlobalData sharedGlobalData].stickersArray) {
         [contentView addSubview:s];
     }
     
     [self.view addSubview:contentView];
-    
+
+    filterTag = 0;
 }
 
 #pragma mark -
@@ -226,6 +228,19 @@
 - (void) doneAction {
     NSLog(@"done!");
     [GlobalData sharedGlobalData].fromEffectsTag = 1;
+    
+    switch (filterTag) {
+        case 1:
+            [GlobalData sharedGlobalData].currentPhotoView.image = [self blackAndWhiteEffect: [GlobalData sharedGlobalData].currentPhotoView.image];
+            break;
+        case 2:
+            [GlobalData sharedGlobalData].currentPhotoView.image = [self sepiaEffect: [GlobalData sharedGlobalData].currentPhotoView.image];
+            break;
+        case 3:
+            [GlobalData sharedGlobalData].currentPhotoView.image = [self blueEffect: [GlobalData sharedGlobalData].currentPhotoView.image];
+            break;
+            
+    }
 }
 - (void) singleTapSticker: (id) sender {
     NSLog(@"tapped  a sticker");
@@ -233,18 +248,34 @@
 - (void) selectfilter: (UIButton *) button {
     NSLog(@"selectfilter %d", button.tag);
     
+    /**
+      Temporary Solution for EXC_BAD_ACCESS error. -.-'
+      3:30PM 16 May 2012
+     */
+    UIImageView* iView = [[UIImageView alloc]initWithImage:p1];
+    iView.frame = CGRectMake(0, 0, 0, 0);
+    [self.view addSubview:iView];
+    [iView release];
+
+    
+    filterTag = button.tag;
     switch (button.tag) {
         case 1:
             NSLog(@"b&w");
+            photoView1.image = [self blackAndWhiteEffect: p1];
             break;
         case 2:
             NSLog(@"sepia");
+            photoView1.image = [self sepiaEffect: p1];
             break;
         case 3:
             NSLog(@"blue");
+            photoView1.image = [self blueEffect: p1];
             break;
             
     }
+    
+    
 }
 - (void) segmentedControlAction: (UISegmentedControl *)segmentedControl {
     
@@ -261,7 +292,7 @@
         [self.view addSubview:stickersScrollView];
     }
 }
-- (void) addSticker: (UIImage *)img{
+- (void) addSticker: (UIImage *)img {
     UIImageView *imgView = [[UIImageView alloc]initWithImage:img];
     imgView.frame = CGRectMake(0, 0, 50, 50);
     imgView.tag = stickersCount;
